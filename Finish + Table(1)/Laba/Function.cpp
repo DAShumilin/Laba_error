@@ -1,6 +1,6 @@
 #include "Function.h"
 
-double my_Exp(double x, double e) {
+double my_Exp(double x, double e, int* k) {
 
 	double x_0 = 0.0, x_n = e + 1, sum = 0.0;
 	int n = 1;
@@ -12,10 +12,11 @@ double my_Exp(double x, double e) {
 		sum += x_n;
 		x_0 = x_n;
 	}
+	*k = n;
 	return sum;
 }
 
-double my_Sin(double x, double e) {
+double my_Sin(double x, double e, int* k) {
 
 	double x_0 = 0.0, x_n = e + 1, sum = 0.0, n = 0.0;
 
@@ -28,10 +29,11 @@ double my_Sin(double x, double e) {
 		n++;
 		x_n = x_n < 0 ? -1 * x_n : x_n;
 	}
+	*k = n;
 	return sum;
 }
 
-double my_Cos(double x, double e) {
+double my_Cos(double x, double e, int* k) {
 
 	double x_0 = 0.0, x_n = e + 1, sum = 0.0, n = 0.0;
 
@@ -44,10 +46,11 @@ double my_Cos(double x, double e) {
 		n++;
 		x_n = x_n < 0 ? -1 * x_n : x_n;
 	}
+	*k = n;
 	return sum;
 }
 
-double my_Ln(double x, double e) {
+double my_Ln(double x, double e, int* k) {
 
 	double x_0 = 0.0, x_n = e + 1, sum = 0.0, n = 0.0;
 
@@ -60,10 +63,11 @@ double my_Ln(double x, double e) {
 		n++;
 		x_n = x_n < 0 ? -1 * x_n : x_n;
 	}
+	*k = n;
 	return sum;
 }
 
-double my_Frac(double x, double e) {
+double my_Frac(double x, double e, int* k) {
 
 	double x_0 = 0.0, x_n = e + 1, sum = 0.0, n = 0.0;
 
@@ -75,5 +79,6 @@ double my_Frac(double x, double e) {
 		x_0 = x_n;
 		n++;
 	}
+	*k = n;
 	return sum;
 }
