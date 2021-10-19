@@ -19,7 +19,13 @@ double my_Exp(double x, double e, int* k) {
 double my_Sin(double x, double e, int* k) {
 
 	double x_0 = 0.0, x_n = e + 1, sum = 0.0, n = 0.0;
-
+	
+	if (x > 6.28) {
+		while (x > 6.28) {
+			x -= 6.28;
+		}
+	}
+	
 	x_0 = x;
 	sum = x_0;
 	while (x_n > e) {
@@ -36,6 +42,12 @@ double my_Sin(double x, double e, int* k) {
 double my_Cos(double x, double e, int* k) {
 
 	double x_0 = 0.0, x_n = e + 1, sum = 0.0, n = 0.0;
+
+	if (x > 6.28) {
+		while (x > 6.28) {
+			x -= 6.28;
+		}
+	}
 
 	x_0 = 1;
 	sum = x_0;
